@@ -16,10 +16,11 @@ UPLOAD_PATH = os.path.join(os.getcwd(), "__DATA__")
 os.makedirs(UPLOAD_PATH, exist_ok=True)
 
 # Load API key from configuration file
-CONFIG_PATH = r"config.yaml"
-with open(CONFIG_PATH) as file:
-    data = yaml.load(file, Loader=yaml.FullLoader)
-    api_key = data['GEMINI_API_KEY']
+# CONFIG_PATH = r"config.yaml"
+# with open(CONFIG_PATH) as file:
+#     data = yaml.load(file, Loader=yaml.FullLoader)
+
+api_key = 'AIzaSyDz7gvit1UcwBuYRX7L7iVcfmRdeaNrMZ4'
 
 # Configure the Gemini API client
 genai.configure(api_key=api_key)
