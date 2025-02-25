@@ -1,0 +1,33 @@
+{
+    "name": "Dilshad Ansari",
+    "contact": "+91 9319475235 | rdilshad3559@gmail.com | linkedin.com/in/dilshad-ansari-dev | github.com/lytcode404",
+    "Education": [
+        {
+            "Netaji Subhash University of Technology": "Bachelor\u2019s Degree in ECE - AI & ML (CGPA: 7.6) 2022-Present"
+        },
+        {
+            "Rajkiya Pratibha Vikas Vidyalaya": "Higher Secondary - 91.6% 2020-2021"
+        }
+    ],
+    "Technical Skills": [
+        "Python, JavaScript, Django, Flask, C++, SQL",
+        "React, Next.js, Node.js, Express.js",
+        "Git, Docker, AWS, Google Cloud"
+    ],
+    "Experience": [
+        {
+            "Full Stack Developer (E-commerce Website)": "Developed a responsive e-commerce site using Next.js, Node.js, Firestore DB."
+        },
+        {
+            "Full Stack Developer (ARW Tours)": "Designed a travel booking platform, increasing user engagement by 25%."
+        }
+    ],
+    "Projects": [
+        {
+            "Shop Smart Analyser": "Winner at AMDOCS MOKSHA INNOVISION, analyzed Flipkart products using Chrome APIs."
+        },
+        {
+            "Crypto Bubbles": "Top 10 at Adobe DevCraft, visual cryptocurrency web app with floating bubbles."
+        }
+    ]
+}
