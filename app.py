@@ -160,10 +160,6 @@ You are an AI bot designed to parse resumes. Given the resume below, extract key
         logging.error(f"Error in ats_extractor: {e}")
         return None
 
-# -------------------------------
-# New endpoint and function for ATS scoring
-# -------------------------------
-
 
 @app.route('/ats', methods=["POST"])
 def ats_score():
@@ -222,6 +218,36 @@ def ats_score_extractor(resume_json, job_description):
     except Exception as e:
         logging.error(f"Error in ats_score_extractor: {e}")
         return None
+
+
+generation_config = {
+    "temperature": 1,
+    "top_p": 0.95,
+    "top_k": 40,
+    "max_output_tokens": 8192,
+    "response_mime_type": "application/json",
+}
+
+model = genai.GenerativeModel(
+    model_name="gemini-2.0-flash",
+    generation_config=generation_config,
+)
+
+@app.route("/generate-test", methods=["POST"])
+def generate_test():
+    data = request.json
+    topic = data.get("topic")
+
+    if not topic:
+        return jsonify({"error": "Topic is required"}), 400
+
+    prompt = f"Give me a JSON formatted test of 20 questions with 4 options each. The JSON test should be of topic '{topic}'."
+
+    chat_session = model.start_chat()
+    response = chat_session.send_message(prompt)
+
+    return jsonify(response.text)
+
 
 
 if __name__ == "__main__":
